@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3D0005"
+    tools:context=".Fims">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="95dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="68dp"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="56dp"
+        android:fontFamily="@font/holtwood_one_sc"
+        android:text="Films"
+        android:textColor="#FBFAFA"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="144dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="29dp"
+        android:background="#D9D9D9"
+        app:layout_constraintEnd_toStartOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="144dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="48dp"
+        android:background="#D9D9D9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="144dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="42dp"
+        android:background="#D9D9D9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="122dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="2dp"
+        android:text="Lieu : Pathé tunis city"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView22"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="122dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="20dp"
+        android:text="Date : 30/07/2025  "
+        android:textAlignment="center"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="122dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="4dp"
+        android:text="19:30"
+        android:textAlignment="center"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="144dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="42dp"
+        android:background="#D9D9D9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view4"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="97dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="11dp"
+        android:fontFamily="@font/holtwood_one_sc"
+        android:text=" Nefarious "
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="111dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/holtwood_one_sc"
+        android:text="The insider"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="111dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:fontFamily="@font/holtwood_one_sc"
+        android:text="The Monkey"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/view4" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="111dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="9dp"
+        android:fontFamily="@font/holtwood_one_sc"
+        android:text="Drop Game"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="122dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="185dp"
+        android:text="Lieu : Pathé tunis city"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="122dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="12dp"
+        android:text="Lieu : Pathé tunis city"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView21"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="122dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="187dp"
+        android:text="Lieu : Pathé tunis city"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="120dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginBottom="24dp"
+        android:text="Date : 30/05/2025 "
+        android:textAlignment="center"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="120dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginBottom="4dp"
+        android:text="16:30"
+        android:textAlignment="center"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="120dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="9dp"
+        android:text="20:00"
+        android:textAlignment="center"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="121dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="28dp"
+        android:text="Date : 20/04/2026  "
+        android:textAlignment="center"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="121dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="8dp"
+        android:text="21:15"
+        android:textAlignment="center"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="120dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="28dp"
+        android:text="Date : 20/05/2026  "
+        android:textAlignment="center"
+        android:textColor="#0B0B0B"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="107dp"
+        android:layout_height="154dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="68dp"
+        android:contentDescription="Film 7"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:srcCompat="@drawable/img_3" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="69dp"
+        android:contentDescription="Film 11"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:srcCompat="@drawable/img_4" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="112dp"
+        android:layout_height="157dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="17dp"
+        android:contentDescription="Film 12"
+        app:layout_constraintEnd_toEndOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/view4"
+        app:srcCompat="@drawable/img_5" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="21dp"
+        android:contentDescription="Film 13"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5"
+        app:srcCompat="@drawable/img_6" />
+</androidx.constraintlayout.widget.ConstraintLayout>
