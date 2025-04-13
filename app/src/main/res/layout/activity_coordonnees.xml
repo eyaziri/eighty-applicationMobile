@@ -22,7 +22,7 @@
         app:cornerRadius="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view11"
         app:layout_constraintVertical_bias="0.0"
@@ -44,8 +44,8 @@
 
     <View
         android:id="@+id/view11"
-        android:layout_width="341dp"
-        android:layout_height="561dp"
+        android:layout_width="342dp"
+        android:layout_height="511dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="47dp"
@@ -61,16 +61,18 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="437dp"
         android:fontFamily="@font/holtwood_one_sc"
         android:text="Remplir Vos coordonnées"
         android:textColor="#050505"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view11"
         app:layout_constraintEnd_toEndOf="@+id/view11"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view11"
         app:layout_constraintTop_toTopOf="@+id/view11" />
 
@@ -81,11 +83,13 @@
         android:layout_marginStart="33dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="227dp"
+        android:layout_marginBottom="386dp"
         android:fontFamily="sans-serif"
         android:text="Votre Nom :"
         android:textColor="#050505"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view11"
         app:layout_constraintEnd_toEndOf="@+id/view11"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view11"
@@ -98,7 +102,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="263dp"
         android:layout_marginEnd="167dp"
-        android:layout_marginBottom="270dp"
+        android:layout_marginBottom="199dp"
         android:text="Votre Email :"
         android:textColor="#050505"
         android:textSize="18sp"
@@ -107,8 +111,7 @@
         app:layout_constraintEnd_toEndOf="@+id/view11"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toTopOf="@+id/view11"
-        app:layout_constraintVertical_bias="0.011" />
+        app:layout_constraintTop_toTopOf="@+id/view11" />
 
     <TextView
         android:id="@+id/textView30"
@@ -117,7 +120,7 @@
         android:layout_marginStart="33dp"
         android:layout_marginTop="164dp"
         android:layout_marginEnd="202dp"
-        android:layout_marginBottom="373dp"
+        android:layout_marginBottom="298dp"
         android:text="Votre Prénom :"
         android:textColor="#050505"
         android:textSize="18sp"
@@ -126,25 +129,42 @@
         app:layout_constraintEnd_toEndOf="@+id/view11"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toTopOf="@+id/view11"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/view11" />
 
     <TextView
         android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="177dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="456dp"
+        android:layout_marginEnd="202dp"
+        android:layout_marginBottom="31dp"
         android:fontFamily="sans-serif"
-        android:text="Votre Methode de Payement:"
+        android:text="Prix Total :"
         android:textColor="#050505"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view11"
         app:layout_constraintEnd_toEndOf="@+id/view11"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view11"
+        app:layout_constraintTop_toTopOf="@+id/view11"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="456dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="31dp"
+        android:fontFamily="sans-serif"
+        android:text="TND"
+        android:textColor="#050505"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view11"
+        app:layout_constraintEnd_toEndOf="@+id/view11"
         app:layout_constraintStart_toStartOf="@+id/view11"
         app:layout_constraintTop_toTopOf="@+id/view11"
         app:layout_constraintVertical_bias="0.0" />
@@ -153,23 +173,22 @@
         android:id="@+id/textView31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="464dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="73dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="384dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="78dp"
         android:text="Reserver Combien de Places ? "
         android:textColor="#050505"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view11"
         app:layout_constraintEnd_toEndOf="@+id/view11"
-        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toTopOf="@+id/view11"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/view11" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editTextNom"
         android:layout_width="285dp"
         android:layout_height="41dp"
         android:layout_marginStart="35dp"
@@ -186,20 +205,19 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editTextPrenom"
         android:layout_width="285dp"
         android:layout_height="41dp"
         android:layout_marginStart="38dp"
         android:layout_marginTop="208dp"
         android:layout_marginEnd="33dp"
-        android:layout_marginBottom="338dp"
+        android:layout_marginBottom="237dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/view11"
         app:layout_constraintEnd_toEndOf="@+id/view11"
         app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toTopOf="@+id/view11"
-        app:layout_constraintVertical_bias="0.275" />
+        app:layout_constraintTop_toTopOf="@+id/view11" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
@@ -208,55 +226,14 @@
         android:layout_marginStart="38dp"
         android:layout_marginTop="306dp"
         android:layout_marginEnd="34dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginBottom="139dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="@+id/view11"
         app:layout_constraintEnd_toEndOf="@+id/view11"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toTopOf="@+id/view11"
-        app:layout_constraintVertical_bias="0.23" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="110dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="421dp"
-        android:layout_marginEnd="47dp"
-        android:layout_marginBottom="120dp"
-        android:backgroundTint="#FFB701"
-        android:text="Cash"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view11"
-        app:layout_constraintEnd_toEndOf="@+id/view11"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toTopOf="@+id/view11"
-        app:layout_constraintVertical_bias="0.923" />
-
-    <EditText
-        android:id="@+id/editTextText3"
-        android:layout_width="62dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="497dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view11"
-        app:layout_constraintEnd_toEndOf="@+id/view11"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toTopOf="@+id/view11"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/view11" />
 
     <ImageView
         android:id="@+id/imageView23"
@@ -272,5 +249,52 @@
         app:layout_constraintTop_toTopOf="@+id/button8"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/img" />
+
+    <EditText
+        android:id="@+id/editTextPlaces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="384dp"
+        android:layout_marginEnd="-30dp"
+        android:layout_marginBottom="79dp"
+        android:inputType="number"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view11"
+        app:layout_constraintEnd_toEndOf="@+id/view11"
+        app:layout_constraintHorizontal_bias="0.801"
+        app:layout_constraintStart_toStartOf="@+id/view11"
+        app:layout_constraintTop_toTopOf="@+id/view11" />
+
+    <EditText
+        android:id="@+id/PrixValeur"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="21dp"
+        android:inputType="number"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view11"
+        app:layout_constraintEnd_toEndOf="@+id/view11"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view11"
+        app:layout_constraintTop_toTopOf="@+id/view11"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    </RadioGroup>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -100,12 +100,11 @@ public class ReservationActivity extends AppCompatActivity {
         btnDecouvrons.setOnClickListener(v -> {
             String selectedGenre = editTextText8.getText().toString().trim();
 
-            if (selectedGenre.equals("Films")) {
-                startActivity(new Intent(ReservationActivity.this, Fims.class));
-            } else if (selectedGenre.equals("Cirque")) {
-                startActivity(new Intent(ReservationActivity.this, Cirque.class));
-            } else if (selectedGenre.equals("Théâtre")) {
-                startActivity(new Intent(ReservationActivity.this, Theatre.class));
+            if (!selectedGenre.isEmpty()) {
+                // Passer le genre sélectionné à Activity_Events
+                Intent intent = new Intent(ReservationActivity.this, Events.class);
+                intent.putExtra("selectedGenre", selectedGenre);  // Passer l'extra
+                startActivity(intent);
             } else {
                 Toast.makeText(ReservationActivity.this, "Veuillez sélectionner un genre valide", Toast.LENGTH_SHORT).show();
             }

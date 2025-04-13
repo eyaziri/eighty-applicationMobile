@@ -1,0 +1,10 @@
+package com.EvalTrack.Repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.EvalTrack.Entities.Matiére;
+
+@Repository
+public interface MatiereRepository extends JpaRepository<Matiére, Integer> {
+    Matiére findByNom(String nom);
+}

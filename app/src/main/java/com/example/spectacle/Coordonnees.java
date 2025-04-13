@@ -6,18 +6,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.util.Log;
+import android.text.Editable;
+import android.text.TextWatcher;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Coordonnees extends AppCompatActivity {
 
-    private Event event; // L'événement en cours
-    private EditText editTextNom, editTextPrenom, editTextEmail,editTextPlaces;
+    private EditText editTextNom, editTextPrenom, editTextEmail, editTextPlaces, prixValeur;
     private Button buttonReserver;
 
     @Override
@@ -25,21 +26,33 @@ public class Coordonnees extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coordonnees);
 
-        // Récupérer l'événement depuis l'Intent
-        event = (Event) getIntent().getSerializableExtra("event");
-
-        if (event == null) {
-            Toast.makeText(this, "Erreur : Aucun événement reçu.", Toast.LENGTH_SHORT).show();
-            finish(); // Ferme l'activité si aucun événement n'est reçu
-            return;
-        }
-
-        // Lier les vues
-        editTextNom = findViewById(R.id.editTextText);
-        editTextPrenom = findViewById(R.id.editTextText2);
+        editTextNom = findViewById(R.id.editTextNom);
+        prixValeur = findViewById(R.id.PrixValeur);
+        editTextPrenom = findViewById(R.id.editTextPrenom);
         editTextEmail = findViewById(R.id.editTextTextEmailAddress);
-        editTextPlaces = findViewById(R.id.editTextText3);
+        editTextPlaces = findViewById(R.id.editTextPlaces);
         buttonReserver = findViewById(R.id.button8);
+
+        // Listener pour calculer le prix total en fonction du nombre de places
+        editTextPlaces.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                try {
+                    int nombreDePlaces = Integer.parseInt(charSequence.toString());
+                    int prixUnitaire = 10; // Prix unitaire par place en TND (modifiable selon votre logique)
+                    int prixTotal = nombreDePlaces * prixUnitaire;
+                    prixValeur.setText(String.valueOf(prixTotal));
+                } catch (NumberFormatException e) {
+                    prixValeur.setText("0");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
 
         buttonReserver.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,65 +69,39 @@ public class Coordonnees extends AppCompatActivity {
         String nombrePlacesStr = editTextPlaces.getText().toString().trim();
 
         if (nom.isEmpty() || prenom.isEmpty() || email.isEmpty() || nombrePlacesStr.isEmpty()) {
-            Toast.makeText(this, "Veuillez entrer un nombre de places", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
             return;
         }
 
         int nombrePlaces = Integer.parseInt(nombrePlacesStr);
+        int idSpec = getIntent().getIntExtra("idSpec", 1); // 1 est la valeur par défaut
 
-        if (nombrePlaces <= 0) {
-            Toast.makeText(this, "Le nombre de places doit être supérieur à 0", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        // Créer l'objet Reservation
+        Reservation reservation = new Reservation(nom, prenom, email, nombrePlaces, idSpec);
 
-        if (event != null) {
-            if (event.getNombreDePlace() >= nombrePlaces) {
-                event.decrementerPlaces(nombrePlaces);
+        // Appeler Retrofit pour envoyer la réservation
+        ApiService apiService = RetrofitClient.getApiService();
+        Call<Void> call = apiService.enregistrerReservation(reservation);
 
-                Toast.makeText(this, "Réservation réussie ! Places restantes : " + event.getNombreDePlace(), Toast.LENGTH_SHORT).show();
-
-                // Vérifier si des places restent après la réservation
-                if (event.getNombreDePlace() > 0) {
-                    // Redirection vers l'interface de succès
-                    Intent intent = new Intent(Coordonnees.this, ReservationSucces.class);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(Coordonnees.this, "Réservation réussie !", Toast.LENGTH_SHORT).show();
+                    // Naviguer vers l'activité de paiement
+                    Intent intent = new Intent(Coordonnees.this, payement.class);
                     startActivity(intent);
                 } else {
-                    // Redirection vers l'interface d'échec (plus de places disponibles)
-                    Intent intent = new Intent(Coordonnees.this, EchecReservation.class);
-                    startActivity(intent);
+                    Toast.makeText(Coordonnees.this, "Erreur lors de la réservation. Code : " + response.code(), Toast.LENGTH_SHORT).show();
                 }
-
-                finish(); // Fermer l'activité actuelle après la transition
-            } else {
-                Toast.makeText(this, "Pas assez de places disponibles", Toast.LENGTH_SHORT).show();
             }
-        }
-    }
 
-        private void insererDansBaseDeDonnees(String nom, String prenom, String email, int nombrePlaces, Event event) {
-            String url = "jdbc:mysql://localhost:3306/reservations_db"; // Remplace par l'IP de ton serveur MySQL
-            String user = "root"; // Remplace par ton utilisateur MySQL
-            String password = "f56724"; // Remplace par ton mot de passe MySQL
-
-            try {
-                Connection conn = DriverManager.getConnection(url, user, password);
-                String sql = "INSERT INTO personne (nom, prenom, email, nombreDePlace, titreDeFilm, dateFilm, dureeFilm) VALUES (?, ?, ?, ?, ?, ?, ?)";
-                PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setString(1, nom);
-                stmt.setString(2, prenom);
-                stmt.setString(3, email);
-                stmt.setInt(4, nombrePlaces);
-                stmt.setString(5, event.getTitle());  // Titre du film
-                stmt.setString(6, event.getDate());   // Date du film
-                stmt.setString(7, event.getDuration());  // Durée du film
-
-                stmt.executeUpdate();
-                stmt.close();
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-                Toast.makeText(this, "Erreur lors de la connexion à la base de données", Toast.LENGTH_SHORT).show();
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Toast.makeText(Coordonnees.this, "Erreur de connexion : " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("API", "Erreur de connexion", t);
             }
+        });
     }
 
 }

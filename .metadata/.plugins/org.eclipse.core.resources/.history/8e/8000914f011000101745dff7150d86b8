@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.EvalTrack.Entities;
+
+/**
+ * @author eyazi
+ *
+ */
+public class Enseignant {
+
+}
